@@ -1,0 +1,240 @@
+{% extends 'resume/Base.html' %} {% load static %} {% block title %} Blog Details
+{% endblock %} {% block content %}
+    <section class="main-blog pt-100">
+        <div class="inner-banner inner-bg5">
+            <div class="container">
+                <div class="inner-title text-center">
+                    <h3>Blog Details</h3>
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <i class="bx bxs-chevrons-right"></i>
+                        </li>
+                        <li>Blog Details</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="blog-dtls ptb-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="blog-dtls-content">
+                        <div class="blog-dtls-img">
+                            <img
+                                    src="{{ blog.banner_img.url }}"
+                                    alt="Blog Images"
+                            />
+                        </div>
+                        <div class="blog-text">
+                            <h2>{{ blog.title }}</h2>
+                            <p>
+                                {{ blog.content|safe }}
+                            </p>
+
+                        </div>
+
+                        <div class="article-footer">
+                            <div class="article-tags">
+                                <span><i class="bx bx-share-alt"></i></span>
+                                <a href="#">Share</a>
+                            </div>
+                            <div class="article-share">
+                                <ul class="social">
+                                    <li>
+                                        <a href="https://www.facebook.com/login/" target="_blank">
+                                            <i class="bx bxl-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://twitter.com/login" target="_blank">
+                                            <i class="bx bxl-twitter"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/" target="_blank">
+                                            <i class="bx bxl-linkedin"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.pinterest.com/" target="_blank">
+                                            <i class="bx bxl-pinterest-alt"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="comment-area">
+                            <h3 class="comment-title">{{ comments|length }} Comments:</h3>
+                            {% for comment in comments %}
+                                <div class="comment-card">
+                                    <div class="comment-author-img">
+                                        <img
+                                                src="{% static 'resume/images/testimonial/t1.png' %}"
+                                                alt="Images"
+                                        />
+                                    </div>
+                                    <div class="comment-author-title">
+                                        <h3>{{ comment.name|capfirst }}</h3>
+                                        <span>{{ comment.date }}</span>
+                                    </div>
+                                    <div class="comment-body">
+                                        <p>
+                                            {{ comment.comment }}
+                                        </p>
+                                        {#                                        <a href="blog-details.html" class="reply-btn">Reply</a>#}
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            <div class="comment-respond">
+                                <h3 class="comment-respond-title">Leave a Comment</h3>
+                                <form class="comment-form">
+                                    <p>
+                                        Your email address will not be published. Required fields are
+                                        marked *
+                                    </p>
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Name *</label>
+                                                <input
+                                                        type="text"
+                                                        class="form-control"
+                                                        id="name"
+                                                        name="name"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label>Email *</label>
+                                                <input
+                                                        type="email"
+                                                        class="form-control"
+                                                        id="email"
+                                                        name="email"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12">
+                                            <div class="form-group">
+                                                <label>Comment *</label>
+                                                <textarea
+                                                        name="Comment"
+                                                        class="form-control textarea-hight"
+                                                        id="comment"
+                                                        name="comment"
+                                                        cols="15"
+                                                        rows="5"
+                                                ></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12">
+                                            <button type="button" onclick="HandleForm1()" id="comment-btn"
+                                                    class="post-com-btn">
+                                                Post A Comment
+                                            </button>
+                                        </div>
+                                        <div
+                                                id="msgSubmit"
+                                                class="mt-3 mb-3 bg-white p-3 d-none rounded-2 text-center"
+                                        ></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="widget-area">
+                        <section class="widget widget-popular-post">
+                            <h3 class="widget-title">Popular Posts</h3>
+                            <div class="post-wrap">
+                                {% for blog in all_blogs %}
+                                    <article class="item">
+                                        <a href="{% url 'blog-details' blog.url %}" class="thumb">
+                                            <span class="fullimage cover bg1" role="img"></span>
+                                        </a>
+                                        <div class="info">
+                                            <time datetime="2024-06-30">{{ blog.date_published }}</time>
+                                            <h4 class="title usmall">
+                                                <a href="{% url 'blog-details' blog.url %}">
+                                                    {{ blog.title }}
+                                                </a>
+                                            </h4>
+                                        </div>
+                                    </article>
+                                {% endfor %}
+
+                            </div>
+                        </section>
+
+                        <section class="widget widget_tag">
+                            <h3 class="widget-title">Tags</h3>
+                            <div class="post-wrap">
+                                <ul>
+                                    {% for tag in tags %}
+                                        <li>
+                                            <a href="#">{{ tag }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %} {% block js %}
+    <script>
+        function HandleForm1() {
+            $("#comment-btn").text("Posting your comment...");
+            // create an AJAX call
+            $("#msgSubmit").addClass("d-none");
+            $("#msgSubmit").text("");
+            $.ajax({
+                type: "post",
+                url: "{% url 'blog-details' blog.url %}",
+                data: {
+                    name: $("#name").val(),
+                    email: $("#email").val(),
+                    blog: "{{ blog.id }}",
+                    comment: $("#comment").val(),
+
+                    csrfmiddlewaretoken: "{{ csrf_token }}",
+                }, // get the form data
+
+                // on success
+                success: function (response) {
+                    $("#msgSubmit").removeClass("d-none");
+                    $("#msgSubmit").removeClass("text-danger");
+                    $("#msgSubmit").addClass("text-success");
+                    $("#msgSubmit").html(
+                        "Your Comment is Posted Successfully. Thanks"
+                    );
+                    $("#comment-btn").text("Post a Comment");
+                    setTimeout(function () {
+                        location.reload()
+                    }, 3000)
+
+                },
+                // on error
+                error: function (response) {
+                    console.log(response);
+                    $("#msgSubmit").removeClass("d-none");
+                    $("#msgSubmit").removeClass("text-sucess");
+                    $("#msgSubmit").addClass("text-danger");
+
+                    $("#msgSubmit").text(response.responseText);
+                    $("#comment-btn").text("Post a Comment");
+                },
+            });
+        }
+    </script>
+{% endblock %}

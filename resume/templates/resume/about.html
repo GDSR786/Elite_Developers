@@ -1,0 +1,226 @@
+{% extends 'resume/Base.html' %} {% load static %} {% block title %} About me
+{%endblock%} {% block content %}
+
+<div class="about-area about-max pt-100 pb-70" data-aos="fade-up">
+  <div class="container-fluid pt-70">
+    <div class="row align-items-center justify-content-center">
+      <div class="col-lg-5 col-xxl-6">
+        <div class="about-img about-ml">
+          <img
+            src="{%static 'resume/images/about-me-main.png'%}"
+            alt="About me"
+          />
+        </div>
+      </div>
+      <div class="col-lg-7 col-xxl-6">
+        <div class="about-content about-width">
+          <span>About me</span>
+          <h2>Turning Ideas into Interactive Websites</h2>
+          <p class="text-black text-justify">
+            Hi, I'm Gagandeep, a passionate and skilled Full-Stack Web Developer
+            with over two years of experience and 50+ successful projects under
+            my belt. I specialize in building modern, responsive websites that
+            not only look great but also deliver seamless user experiences.
+            Whether you're looking to create a custom website, revamp an
+            existing one, or integrate complex features, I'm here to bring your
+            vision to life with clean code and innovative solutions.
+          </p>
+          <p class="text-black text-justify">
+            My goal is to help businesses thrive in the digital world by
+            combining technical expertise with a deep understanding of user
+            needs. Let’s turn your ideas into impactful, fully-functional
+            websites that work across all platforms.
+          </p>
+          <div class="about-btn">
+            <a href="/contact" class="default-btn active">Contact me</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="counter-area pt-100 pb-70">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-4 col-sm-6 col-md-3">
+        <div class="single-counter">
+          <i class="flaticon-success"></i>
+          <h3><span class="counter">2</span></h3>
+          <p>Years Experience</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 col-md-3">
+        <div class="single-counter">
+          <i class="flaticon-launch"></i>
+          <h3><span class="counter">50</span>+</h3>
+          <p>Projects Done</p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-6 col-md-3">
+        <div class="single-counter">
+          <i class="flaticon-customer"></i>
+          <h3><span class="counter">25</span>+</h3>
+          <p>Happy Clients</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="price-area pt-100 pb-70" id="pricing" data-aos="fade-down">
+  <div class="container">
+    <div class="section-title text-center">
+      <span>Pricing </span>
+      <h2>Pre-ready Pricing for the Services</h2>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-12 pt-45">
+        <div class="tabs-item-list">
+          <ul id="tabs-item" class="text-center">
+            <li class="active">
+              <a href="#monthly" class="prices-tab">INR</a>
+            </li>
+            <li>
+              <a href="#yearly" class="prices-tab">USD</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="prices-content">
+      <div id="monthly" class="active prices-content-area animated">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-sm-6">
+            <div class="single-price">
+              <span>Basic Plan</span>
+              <div class="single-price-title">
+                <h2><sup>Rs.</sup>16,500</h2>
+              </div>
+              <ul>
+                <li>Upto 2 Websites</li>
+                <li>Upto 5 Pages per website</li>
+                <li>Upto 5 revisions per website</li>
+                <li>Speed Optimization</li>
+                <li>Content Uploading</li>
+                <li>Responsive Design</li>
+                <li>Social Media Icons</li>
+                <li>Hosting Setup</li>
+              </ul>
+              <a href="/" class="get-btn">Get Started</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="single-price current">
+              <span>Standard Plan</span>
+              <div class="single-price-title">
+                <h2><sup>Rs.</sup>35,000</h2>
+              </div>
+              <ul>
+                <li>Upto 5 Websites</li>
+                <li>Upto 8 Pages per website</li>
+                <li>Unlimited revisions per website</li>
+                <li>Speed Optimization</li>
+                <li>Content Uploading</li>
+                <li>Responsive Design</li>
+                <li>Social Media Icons</li>
+                <li>Hosting Setup</li>
+                <li>Payment Gateway Setup</li>
+                <li>Chatbot Integration</li>
+              </ul>
+              <a href="/" class="get-btn">Get Started</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="single-price">
+              <span>Premium Plan</span>
+              <div class="single-price-title">
+                <h2><sup>Rs.</sup>54,500</h2>
+              </div>
+              <ul>
+                <li>Upto 9 Websites</li>
+                <li>Upto 12 Pages per website</li>
+                <li>Unlimited revisions per website</li>
+                <li>Speed Optimization</li>
+                <li>SEO Optimization</li>
+                <li>Content Uploading</li>
+                <li>Responsive Design</li>
+                <li>Social Media Icons</li>
+                <li>Hosting Setup</li>
+                <li>Payment Gateway Setup</li>
+                <li>Chatbot Integration</li>
+              </ul>
+              <a href="pricing.html" class="get-btn">Get Stated</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="yearly" class="animated prices-content-area">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-sm-6">
+            <div class="single-price">
+              <span>Basic Plan</span>
+              <div class="single-price-title">
+                <h2><sup>$</sup>196</h2>
+              </div>
+              <ul>
+                <li>Upto 2 Websites</li>
+                <li>Upto 5 Pages per website</li>
+                <li>Upto 5 revisions per website</li>
+                <li>Speed Optimization</li>
+                <li>Content Uploading</li>
+                <li>Responsive Design</li>
+                <li>Social Media Icons</li>
+                <li>Hosting Setup</li>
+              </ul>
+              <a href="/" class="get-btn">Get Started</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="single-price current">
+              <span>Standard Plan</span>
+              <div class="single-price-title">
+                <h2><sup>$</sup>420</h2>
+              </div>
+              <ul>
+                <li>Upto 5 Websites</li>
+                <li>Upto 8 Pages per website</li>
+                <li>Unlimited revisions per website</li>
+                <li>Speed Optimization</li>
+                <li>Content Uploading</li>
+                <li>Responsive Design</li>
+                <li>Social Media Icons</li>
+                <li>Hosting Setup</li>
+                <li>Payment Gateway Setup</li>
+                <li>Chatbot Integration</li>
+              </ul>
+              <a href="/" class="get-btn">Get Started</a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <div class="single-price">
+              <span>Premium Plan</span>
+              <div class="single-price-title">
+                <h2><sup>$</sup>650</h2>
+              </div>
+              <ul>
+                <li>Upto 9 Websites</li>
+                <li>Upto 12 Pages per website</li>
+                <li>Unlimited revisions per website</li>
+                <li>Speed Optimization</li>
+                <li>SEO Optimization</li>
+                <li>Content Uploading</li>
+                <li>Responsive Design</li>
+                <li>Social Media Icons</li>
+                <li>Hosting Setup</li>
+                <li>Payment Gateway Setup</li>
+                <li>Chatbot Integration</li>
+              </ul>
+              <a href="pricing.html" class="get-btn">Get Stated</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%endblock%}
